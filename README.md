@@ -11,6 +11,7 @@
   ```
   200         Everything fine, cards've been imported.
   404         Project not found.
+  500         Internal server error.
   ```
   
   
@@ -23,17 +24,22 @@
   **Data params**
   ```json
   {
-      "column_id":"1234",
+      "column":"Backlog",
       "pattern":"phrase to change",
       "change_to":"another word"
   }
   ```
+  * *column* - column id or name
+  * *pattern* - pattern to find
+  * *change_to* - phrase to change found pattern to
   
   **Response**
   
   ```
-  200         Everything fine, cards've been imported.
+  200         Everything fine.
+  404         None cards found, matching given pattern.
   422         Something wrong with parameters.
+  500         Internal server error.
   ```
 
 
@@ -52,12 +58,17 @@
       "pattern":"phrase to find"
   }
   ```
+  * *column_from* - column to look for patterns id or name
+  * *column_to* - id or name of column, which we move found cards to
+  * *pattern* - pattern to find
   
   **Response**
   
   ```
-  200         Everything fine, cards've been imported.
+  200         Everything fine.
+  404         None cards found, matching given pattern.
   422         Something wrong with parameters.
+  500         Internal server error.
   ```
 
 
@@ -71,16 +82,20 @@
   **Data params**
   ```json
   {
-      "column_id":"1234",
+      "column":"1234",
       "pattern":"phrase to find"
   }
   ```
+  * *column* - column id or name
+  * *pattern* - pattern to find
   
   **Response**
   
   ```
-  200         Everything fine, cards've been imported.
+  200         Everything fine.
+  404         None cards found, matching given pattern.
   422         Something wrong with parameters.
+  500         Internal server error.
   ```
 
 
