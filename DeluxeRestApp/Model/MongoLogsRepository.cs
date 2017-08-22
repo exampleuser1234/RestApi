@@ -16,7 +16,7 @@ namespace DeluxeRestApp.Model
 
         public MongoLogsRepository()
         {
-            _client = new MongoClient("mongodb://localhost:27017");
+            _client = new MongoClient("mongodb://0.0.0.0:27017");
             _database = _client.GetDatabase("logsDB");
             _collection = _database.GetCollection<Log>("logs");
         }
