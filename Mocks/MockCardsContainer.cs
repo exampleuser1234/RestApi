@@ -1,18 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Models;
-using Models.GithubApiModels;
-
-namespace Mocks
+﻿namespace Mocks
 {
+    #region Usings
+    using System.Collections.Generic;
+    using Models;
+    using Models.GithubApiModels;
+    #endregion
+
     public static class MockCardsContainer
     {
+        #region Coonstructor
         static MockCardsContainer()
         {
             Init();
         }
+        #endregion
 
+        #region Methods
         public static void Init()
         {
             Projects = new List<Project>()
@@ -56,10 +59,13 @@ namespace Mocks
                 new List<Card>()
             };
         }
+        #endregion
 
+        #region Fields
         public static int CardId;
         public static List<Project> Projects;
         public static List<Column> Columns;
         public static List<List<Card>> Cards;
+        #endregion
     }
 }

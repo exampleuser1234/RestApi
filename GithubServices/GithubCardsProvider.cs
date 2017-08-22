@@ -1,4 +1,5 @@
-﻿namespace GithubServices
+﻿using Models.GithubApiModels;
+namespace GithubServices
 {
     #region Usings
     using System;

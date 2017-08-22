@@ -1,4 +1,4 @@
-﻿namespace Models
+﻿namespace Models.GithubApiModels
 {
     public class Creator
     {

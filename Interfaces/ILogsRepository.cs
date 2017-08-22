@@ -6,6 +6,9 @@ using Models.LogsModels;
 
 namespace Interfaces
 {
+    #region Usings
+    #endregion
+
     public interface ILogsRepository
     {
         Task<IEnumerable<Log>> Get();

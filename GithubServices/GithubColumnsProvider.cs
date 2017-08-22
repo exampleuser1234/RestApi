@@ -1,11 +1,11 @@
-﻿using System.Net;
-
-namespace GithubServices
+﻿namespace GithubServices
 {
     #region Usings
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using Interfaces;
+    using System.Net;
+    using Models.GithubApiModels;
     using Models;
     using Newtonsoft.Json;
     using RestSharp;

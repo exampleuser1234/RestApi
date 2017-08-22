@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Models;
+﻿
 
 namespace Interfaces
 {
+    #region Usings
+    using System.Collections.Generic;
+    using Models.GithubApiModels;
+    using System.Threading.Tasks;
+    using Models;
+    #endregion
+
     public interface ICardsProvider
     {
         Task<IEnumerable<Card>> Get(string columnId);

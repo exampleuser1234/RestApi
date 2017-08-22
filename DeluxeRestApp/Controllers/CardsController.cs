@@ -1,4 +1,6 @@
-﻿namespace DeluxeRestApp.Controllers
+﻿using Models.GithubApiModels;
+
+namespace DeluxeRestApp.Controllers
 {
     #region Usings
     using System;

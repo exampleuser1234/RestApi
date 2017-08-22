@@ -11,11 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubServices", "GithubServices\GithubServices.csproj", "{431D742B-4D71-43DC-B012-B2DE454760B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{75AF06C3-5461-46C4-823A-ADC14BE548C6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mocks", "Mocks\Mocks.csproj", "{E534738A-A88C-49F5-9EC8-9B3068C5769A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{DB850025-E41E-4F05-B066-E5C0A7B189EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{DB850025-E41E-4F05-B066-E5C0A7B189EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +37,6 @@ Global
 		{431D742B-4D71-43DC-B012-B2DE454760B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{431D742B-4D71-43DC-B012-B2DE454760B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{431D742B-4D71-43DC-B012-B2DE454760B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75AF06C3-5461-46C4-823A-ADC14BE548C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75AF06C3-5461-46C4-823A-ADC14BE548C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75AF06C3-5461-46C4-823A-ADC14BE548C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75AF06C3-5461-46C4-823A-ADC14BE548C6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E534738A-A88C-49F5-9EC8-9B3068C5769A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E534738A-A88C-49F5-9EC8-9B3068C5769A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E534738A-A88C-49F5-9EC8-9B3068C5769A}.Release|Any CPU.ActiveCfg = Release|Any CPU

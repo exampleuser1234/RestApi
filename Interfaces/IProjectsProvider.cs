@@ -7,6 +7,9 @@ using Models.GithubApiModels;
 
 namespace Interfaces
 {
+    #region Usings
+    #endregion
+
     public interface IProjectsProvider
     {
         Task<IEnumerable<Project>> Get();

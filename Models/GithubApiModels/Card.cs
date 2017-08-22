@@ -1,11 +1,5 @@
-﻿namespace Models
+﻿namespace Models.GithubApiModels
 {
-    //todo Nazwy json
-    //todo generator
-    //todo datetime'y
-    //todo usunac nugety z głownego projektu
-    //TODO zabezpieczyc, przed błędem
-    // napisac, ze da sie lepiej, ae zrobimy try{catcha
     public class Card
     {
         public string url { get; set; }

@@ -5,6 +5,9 @@ using Models.GithubApiModels;
 
 namespace Mocks
 {
+    #region Usings
+    #endregion
+
     public class MockProjectsProvider : IProjectsProvider
     {
 

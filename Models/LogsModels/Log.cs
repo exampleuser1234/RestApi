@@ -3,6 +3,9 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Models.LogsModels
 {
+    #region Usings
+    #endregion
+
     public class Log
     {
         public ObjectId Id { get; set; }

@@ -1,4 +1,5 @@
 using GithubServices;
+using Models.GithubApiModels;
 
 namespace UnitTests
 {

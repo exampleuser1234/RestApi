@@ -24,6 +24,5 @@
             return (RestResponse)(await taskCompletion.Task);
         }
         #endregion
-
     }
 }

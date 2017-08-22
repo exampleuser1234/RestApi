@@ -1,18 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
 using Models;
+using Models.GithubApiModels;
 
 namespace Mocks
 {
+    #region Usings
+    #endregion
+
     public class MockCardsProvider : ICardsProvider
     {
+        #region Private fields
         private static List<Card> _cards;
+        #endregion
 
+        #region Implementation of ICardsProvider
         public async Task<IEnumerable<Card>> Get(string columnId)
         {
             int column;
@@ -87,7 +91,9 @@ namespace Mocks
             MockCardsContainer.Cards[column].Add(card);
             return card;
         }
+        #endregion
 
+        #region Private methods
         private int TranslateColumn(string columnId)
         {
             int column;
@@ -103,5 +109,6 @@ namespace Mocks
                 return -1;
             return column;
         }
+        #endregion
     }
 }

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
-using Interfaces;
-using Models;
-
-namespace Mocks
+﻿namespace Mocks
 {
+    #region Usings
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Interfaces;
+    using Models.GithubApiModels;
+    #endregion
+
     public class MockColumnsProvider : IColumnsProvider
     {
         public async Task<IEnumerable<Column>> Get(string projectId)
