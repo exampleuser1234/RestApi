@@ -15,6 +15,7 @@ namespace DeluxeRestApp
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseUrls("http://*:5000")
                 .UseInit(()=> { Environment.Init(new GithubProjectsProvider(), new GithubColumnsProvider()).Wait(); })
                 .Build();
     }
