@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using GithubServices;
+﻿using GithubServices;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using Environment = GithubServices.Environment;
 
 namespace DeluxeRestApp
@@ -16,9 +9,6 @@ namespace DeluxeRestApp
     {
         public static void Main(string[] args)
         {
-            if (args[0] == null)
-                return;
-            Environment.AuthToken = args[0];
             BuildWebHost(args).Run();
         }
 

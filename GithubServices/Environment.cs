@@ -12,7 +12,7 @@
     public static class Environment
     {
         #region Public fields
-        public static string AuthToken;
+        public static string AuthToken="<OAUTHTOKEN>";
         public static string ProjectId;
         public static Dictionary<string, string> ColumnNamesIds;
         #endregion
