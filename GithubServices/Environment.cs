@@ -1,4 +1,6 @@
-﻿namespace GithubServices
+﻿using System;
+
+namespace GithubServices
 {
     #region Usings
     using System.Collections.Generic;
@@ -30,6 +32,7 @@
         #region Methods
         public static async Task<bool> Init(IProjectsProvider projectsProvider,IColumnsProvider columnsProvider)
         {
+            Console.WriteLine("Starting init.");
             ColumnNamesIds = new Dictionary<string, string>();
             var projects = await projectsProvider.Get();
             if (projects == null)

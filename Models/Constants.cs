@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Models
+﻿namespace Models
 {
     public static class Constants
     {
@@ -16,7 +12,7 @@ namespace Models
 
         public const string GetProjectsUrl = "/repos/{owner}/{repo}/projects";
         public const string CreateProjectUrl = "/repos/{owner}/{repo}/projects";
-        public const string Owner = "xhri";
+        public const string Owner = "exampleuser1234";
         public const string Repo = "test";
 
         public const string ProjectName = "Test";
