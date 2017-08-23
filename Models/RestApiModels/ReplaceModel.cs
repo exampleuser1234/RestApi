@@ -13,8 +13,10 @@
         #endregion
 
         #region Public methods
-        public override bool TransleteColumnsNames(Dictionary<string, string> nameIdDictionary)
+        public override bool CheckAndTransleteColumnsNames(Dictionary<string, string> nameIdDictionary)
         {
+            if (column == null || string.IsNullOrEmpty(pattern) || change_to==null)
+                return false;
             if (nameIdDictionary.ContainsKey(this.column))
                 this.column = nameIdDictionary[this.column];
             return nameIdDictionary.ContainsValue(this.column);

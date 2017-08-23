@@ -35,7 +35,7 @@
         [HttpPost("replace")]
         public async Task<IActionResult> Replace([FromBody] ReplaceModel model)
         {
-            if (!model.TransleteColumnsNames(GithubServices.Environment.ColumnNamesIds))
+            if (!model.CheckAndTransleteColumnsNames(GithubServices.Environment.ColumnNamesIds))
                 return StatusCode(422);
 
             async Task<bool> Func(Card card)
@@ -62,7 +62,7 @@
         [HttpPost("move")]
         public async Task<IActionResult> Move([FromBody] MoveModel model)
         {
-            if (!model.TransleteColumnsNames(GithubServices.Environment.ColumnNamesIds))
+            if (!model.CheckAndTransleteColumnsNames(GithubServices.Environment.ColumnNamesIds))
                 return StatusCode(422);
 
             async Task<bool> Func(Card card)
@@ -87,7 +87,7 @@
         [HttpDelete]
         public async Task<IActionResult> Delete([FromBody] DeleteModel model)
         {
-            if (!model.TransleteColumnsNames(GithubServices.Environment.ColumnNamesIds))
+            if (!model.CheckAndTransleteColumnsNames(GithubServices.Environment.ColumnNamesIds))
                 return StatusCode(422);
 
             async Task<bool> Func(Card card)

@@ -11,6 +11,7 @@
         public ObjectId Id { get; set; }
 
         [BsonElement("Operation")]
+        [BsonRepresentation(BsonType.String)]
         public Operation Operation { get; set; }
 
         [BsonElement("CardId")]

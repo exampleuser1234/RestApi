@@ -7,7 +7,7 @@
     public abstract class BaseApiModel
     {
         #region Public methods
-        public abstract bool TransleteColumnsNames(Dictionary<string, string> nameIdDictionary);
+        public abstract bool CheckAndTransleteColumnsNames(Dictionary<string, string> nameIdDictionary);
         #endregion
     }
 }
