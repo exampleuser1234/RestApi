@@ -16,7 +16,6 @@ namespace DeluxeRestApp
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .UseUrls("http://*:5000")
-                .UseAction(Environment.InitMongoConvention)
                 .UseAction(()=> { Environment.Init(new GithubProjectsProvider(), new GithubColumnsProvider()).Wait(); })
                 .Build();
     }
