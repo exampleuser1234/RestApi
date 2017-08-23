@@ -1,21 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Interfaces;
-using Models;
-using Models.GithubApiModels;
-
-namespace Mocks
+﻿namespace Mocks
 {
-    #region Usings
+    #region Using statements
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Interfaces;
+    using Models.GithubApiModels;
     #endregion
 
     public class MockCardsProvider : ICardsProvider
     {
-        #region Private fields
-        private static List<Card> _cards;
-        #endregion
-
         #region Implementation of ICardsProvider
         public async Task<IEnumerable<Card>> Get(string columnId)
         {

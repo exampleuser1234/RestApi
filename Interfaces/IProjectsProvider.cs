@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Models;
-using Models.GithubApiModels;
-
-namespace Interfaces
+﻿namespace Interfaces
 {
-    #region Usings
+    #region Using statements
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Models.GithubApiModels;
+
     #endregion
 
     public interface IProjectsProvider
     {
+        #region Interface  methods
         Task<IEnumerable<Project>> Get();
         Task<Project> Create(string name);
+        #endregion
     }
 }

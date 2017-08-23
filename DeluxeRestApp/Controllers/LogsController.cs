@@ -1,8 +1,10 @@
 ﻿namespace DeluxeRestApp.Controllers
 {
-    #region Usings
+    #region Using statements
     using Interfaces;
     using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
+
     #endregion
 
     public class LogsController : Controller
@@ -20,9 +22,9 @@
 
         #region Api methods
         [HttpGet("logs")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return Ok(this._logsRepository.Get());
+            return Ok(await this._logsRepository.Get());
         }
         #endregion
     }

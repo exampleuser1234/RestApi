@@ -1,6 +1,6 @@
 ﻿namespace Mocks
 {
-    #region Usings
+    #region Using statements
     using System.Collections.Generic;
     using Models;
     using Models.GithubApiModels;

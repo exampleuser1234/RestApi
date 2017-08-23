@@ -1,6 +1,6 @@
 ﻿namespace Mocks
 {
-    #region Usings
+    #region Using statements
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -10,6 +10,7 @@
 
     public class MockColumnsProvider : IColumnsProvider
     {
+        #region Implementation of IColumnsProvider
         public async Task<IEnumerable<Column>> Get(string projectId)
         {
             int project;
@@ -21,19 +22,13 @@
             {
                 return null;
             }
-            if (project == 10)
-            {
-                return MockCardsContainer.Columns;
-            }
-            else
-            {
-                return null;
-            }
+            return project == 10 ? MockCardsContainer.Columns : null;
         }
 
         public Task<Column> Create(string projectId, string columnName)
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

@@ -1,10 +1,9 @@
-﻿using Models.GithubApiModels;
-namespace GithubServices
+﻿namespace GithubServices
 {
-    #region Usings
-    using System;
+    #region Using statements
     using System.Collections.Generic;
     using System.Linq;
+    using Models.GithubApiModels;
     using System.Net;
     using System.Threading.Tasks;
     using Interfaces;

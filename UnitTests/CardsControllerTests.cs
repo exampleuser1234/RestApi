@@ -1,18 +1,15 @@
-using GithubServices;
-using Models.GithubApiModels;
-
 namespace UnitTests
 {
-    #region Usings
+    #region Using statements
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using DeluxeRestApp;
+    using GithubServices;
+    using Models.GithubApiModels;
     using DeluxeRestApp.Controllers;
     using Interfaces;
     using Microsoft.AspNetCore.Mvc;
     using Mocks;
-    using Models;
     using Models.LogsModels;
     using Models.RestApiModels;
     using Moq;

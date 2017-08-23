@@ -1,6 +1,6 @@
 ﻿namespace GithubServices
 {
-    #region Usings
+    #region Using statements
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using Interfaces;

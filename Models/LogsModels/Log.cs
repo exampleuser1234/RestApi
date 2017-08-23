@@ -1,13 +1,13 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-
-namespace Models.LogsModels
+﻿namespace Models.LogsModels
 {
-    #region Usings
+    #region Using statements
+    using MongoDB.Bson;
+    using MongoDB.Bson.Serialization.Attributes;
     #endregion
 
     public class Log
     {
+        #region Properties
         public ObjectId Id { get; set; }
 
         [BsonElement("Operation")]
@@ -21,5 +21,6 @@ namespace Models.LogsModels
 
         [BsonElement("CardColumn")]
         public string CardColumn { get; set; }
+        #endregion
     }
 }

@@ -2,6 +2,7 @@
 {
     public class Creator
     {
+        #region Properties
         public string login { get; set; }
         public int id { get; set; }
         public string avatar_url { get; set; }
@@ -19,5 +20,6 @@
         public string received_events_url { get; set; }
         public string type { get; set; }
         public bool site_admin { get; set; }
+        #endregion
     }
 }

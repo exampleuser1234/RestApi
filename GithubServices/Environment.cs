@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace GithubServices
+﻿namespace GithubServices
 {
-    #region Usings
+    #region Using statements
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
     using Interfaces;
+    using System;
     using Models;
     using Models.GithubApiModels;
     #endregion
@@ -32,7 +31,6 @@ namespace GithubServices
         #region Methods
         public static async Task<bool> Init(IProjectsProvider projectsProvider,IColumnsProvider columnsProvider)
         {
-            Console.WriteLine("Starting init.");
             ColumnNamesIds = new Dictionary<string, string>();
             var projects = await projectsProvider.Get();
             if (projects == null)
@@ -59,6 +57,7 @@ namespace GithubServices
                 }
                 ColumnNamesIds.Add(columnName, column.id.ToString());
             }
+            Console.WriteLine("Initialization finished successfully.");
             return true;
         }
         #endregion

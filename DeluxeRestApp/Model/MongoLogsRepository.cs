@@ -1,26 +1,33 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Interfaces;
-using Models.LogsModels;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using MongoDB.Driver;
-
-namespace DeluxeRestApp.Model
+﻿namespace DeluxeRestApp.Model
 {
+    #region Using statements
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Interfaces;
+    using Models.LogsModels;
+    using Models;
+    using MongoDB.Bson;
+    using MongoDB.Driver;
+    #endregion
+
     public class MongoLogsRepository : ILogsRepository
     {
+        #region Private fields
         private readonly IMongoClient _client;
         private readonly IMongoDatabase _database;
         private readonly IMongoCollection<Log> _collection;
+        #endregion
 
+        #region Constructor
         public MongoLogsRepository()
         {
-            _client = new MongoClient("mongodb://0.0.0.0:27017");
-            _database = _client.GetDatabase("logsDB");
-            _collection = _database.GetCollection<Log>("logs");
+            _client = new MongoClient(Constants.MongoClientAddress);
+            _database = _client.GetDatabase(Constants.DatabaseName);
+            _collection = _database.GetCollection<Log>(Constants.CollectionName);
         }
+        #endregion
 
+        #region Implementation of ILogsRepository
         public async Task<Log> Insert(Log log)
         {
             await this._collection.InsertOneAsync(log);
@@ -37,5 +44,6 @@ namespace DeluxeRestApp.Model
         {
             return await this._collection.Find(new BsonDocument { { "_id", new ObjectId(id) } }).FirstAsync();
         }
+        #endregion
     }
 }

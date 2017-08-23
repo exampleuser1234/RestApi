@@ -1,8 +1,6 @@
-﻿using Models.GithubApiModels;
-
-namespace DeluxeRestApp.Controllers
+﻿namespace DeluxeRestApp.Controllers
 {
-    #region Usings
+    #region Using statements
     using System;
     using System.Linq;
     using System.Threading.Tasks;
@@ -11,6 +9,8 @@ namespace DeluxeRestApp.Controllers
     using Models;
     using Models.LogsModels;
     using Models.RestApiModels;
+    using Models.GithubApiModels;
+
     #endregion
 
     [Route("[controller]")]

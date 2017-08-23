@@ -1,6 +1,6 @@
 ﻿namespace GithubServices
 {
-    #region Usings
+    #region Using statements
     using System.Threading.Tasks;
     using Models;
     using RestSharp;
@@ -12,7 +12,7 @@
         protected void AddNeededHeader(ref RestRequest request)
         {
             request.AddHeader(Constants.AcceptHeaderName, Constants.Accept);
-            request.AddHeader(Constants.AuthorizationHeaderName, string.Format("token {0}", Environment.AuthToken));
+            request.AddHeader(Constants.AuthorizationHeaderName, string.Format(Constants.TokenFormat, Environment.AuthToken));
             request.AddHeader(Constants.UserAgentHeaderName, Constants.UserAgentName);
         }
 
