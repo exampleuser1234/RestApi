@@ -2,8 +2,6 @@
 {
     #region Using statements
     using MongoDB.Bson;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
     using MongoDB.Bson.Serialization.Attributes;
     #endregion
 
@@ -13,8 +11,6 @@
         public ObjectId Id { get; set; }
 
         [BsonElement("Operation")]
-        [JsonConverter(typeof(StringEnumConverter))]
-        [BsonRepresentation(BsonType.String)]
         public Operation Operation { get; set; }
 
         [BsonElement("CardId")]
