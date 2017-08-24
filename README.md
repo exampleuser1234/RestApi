@@ -100,3 +100,34 @@
 
 
 
+
+***Get logs***
+----
+  Get logs off all the operations.
+  
+  `GET /logs` 
+  
+  **Response**
+  
+  ```
+  200         Everything fine.
+  500         Internal server error.
+  ```
+  ```
+  [
+    {
+        "id": {
+            "timestamp": 1503528598,
+            "machine": 3495253,
+            "pid": 1,
+            "increment": 14413831,
+            "creationTime": "2017-08-23T22:49:58Z"
+        },
+        "operation": "Edit",
+        "cardId": "4324592",
+        "cardNote": "new note",
+        "cardColumn": "1395592"
+    }
+  ]
+  ```
+
