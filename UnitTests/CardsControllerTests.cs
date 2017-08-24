@@ -25,7 +25,11 @@ namespace UnitTests
             MockCardsContainer.Init();
 
             var mockLogsRepository = new Mock<ILogsRepository>();
-            mockLogsRepository.Setup(x => x.Insert(It.IsAny<Log>())).Returns((Log a) => Task.FromResult(a));
+            mockLogsRepository.Setup(x => x.Insert(It.IsAny<Log>())).Returns((Log a) =>
+            {
+                this.lastLog = a;
+                return Task.FromResult(a);
+            });
             _controller = new CardsController(new MockCardsProvider(), new MockColumnsProvider(),
                 mockLogsRepository.Object);
         }
@@ -33,6 +37,7 @@ namespace UnitTests
 
         #region Private fields
         private readonly CardsController _controller;
+        private Log lastLog;
         #endregion
 
         #region Properties for theories
@@ -142,6 +147,25 @@ namespace UnitTests
 
             this.CheckIActionResult(result, expectedCode);
         }
+
+        [Fact]
+        public void ReplaceTest_CorrectLogOperation()
+        {
+            const int columnNumber = 0;
+            const string note = "test";
+            const string pattern = "test";
+
+            this.SetUpCard(note, columnNumber);
+
+            var result = _controller.Replace(new ReplaceModel
+            {
+                column = columnNumber.ToString(),
+                pattern = pattern,
+                change_to = string.Empty
+            }).Result;
+
+            Assert.Equal(Operation.Edit, this.lastLog.Operation);
+        }
         #endregion
 
         #region Move tests
@@ -179,6 +203,26 @@ namespace UnitTests
 
             this.CheckIActionResult(result, expectedCode);
         }
+
+        [Fact]
+        public void MoveTest_CorrectLogOperation()
+        {
+            const int columnFrom = 0;
+            const int columnTo = 1;
+            const string note = "test";
+            const string pattern = "test";
+
+            this.SetUpCard(note, columnFrom);
+
+            var result = _controller.Move(new MoveModel
+            {
+                column_from = columnFrom.ToString(),
+                pattern = pattern,
+                column_to = columnTo.ToString()
+            }).Result;
+
+            Assert.Equal(Operation.Move, this.lastLog.Operation);
+        }
         #endregion
 
         #region Delete tests
@@ -212,6 +256,24 @@ namespace UnitTests
             }).Result;
 
             this.CheckIActionResult(result, expectedCode);
+        }
+
+        [Fact]
+        public void DeleteTest_CorrectLogOperation()
+        {
+            const int column = 0;
+            const string note = "test";
+            const string pattern = "test";
+
+            this.SetUpCard(note, column);
+
+            var result = _controller.Delete(new DeleteModel
+            {
+                column = column.ToString(),
+                pattern = pattern
+            }).Result;
+
+            Assert.Equal(Operation.Delete, this.lastLog.Operation);
         }
 
         #endregion

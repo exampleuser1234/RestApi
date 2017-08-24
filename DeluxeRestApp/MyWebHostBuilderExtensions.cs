@@ -1,7 +1,4 @@
-﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace DeluxeRestApp
+﻿namespace DeluxeRestApp
 {
     #region Using statements
     using System;

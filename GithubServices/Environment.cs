@@ -1,7 +1,4 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Conventions;
-
-namespace GithubServices
+﻿namespace GithubServices
 {
     #region Using statements
     using System.Collections.Generic;
@@ -62,16 +59,6 @@ namespace GithubServices
             }
             Console.WriteLine("Initialization finished successfully.");
             return true;
-        }
-
-        public static void InitMongoConvention()
-        {
-            var pack = new ConventionPack
-            {
-                new EnumRepresentationConvention(BsonType.String)
-            };
-
-            ConventionRegistry.Register("EnumStringConvention", pack, t => true);
         }
 
         #endregion
