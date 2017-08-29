@@ -124,7 +124,8 @@
                 foreach (var card in cards)
                 {
                     Card newCard;
-                    if ((newCard = await _cardsProvider.Create(GithubServices.Environment.ColumnNamesIds[Constants.BacklogName], card.note)) != null)
+                    if ((newCard = await _cardsProvider.Create(
+                            GithubServices.Environment.ColumnNamesIds[Constants.BacklogName], card.note)) != null)
                     {
                         await _logsRepository.Insert(new Log()
                         {
@@ -134,7 +135,10 @@
                             Operation = Operation.Import
                         });
                     }
-                    result = false;
+                    else
+                    {
+                        result = false;
+                    }
                 }
             }
             return result ? StatusCode(200) : StatusCode(500);
